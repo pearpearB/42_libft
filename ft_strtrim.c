@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 18:58:43 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/13 14:39:38 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/13 16:50:18 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!set)
 		return (ft_strdup(s1));
 	i = 0;
+	start = i;
 	while (s1[i] && ft_strchr(set, s1[i]))
-	{
 		start = (i++) + 1;
-	}
 	i = ft_strlen(s1) - 1;
+	end = i;
 	while (s1[i] && ft_strchr(set, s1[i]))
-	{
 		end = (i--) - 1;
-	}
 	if (start > end)
 		return (ft_strdup(""));
 	else

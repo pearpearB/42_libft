@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 18:09:12 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/13 14:31:50 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/13 16:02:37 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s2)
 		return (ft_strdup(s1));
 	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
 	result = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (!result)
 		return (NULL);
