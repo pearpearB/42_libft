@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:41:44 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/13 19:01:32 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/13 19:25:06 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,6 @@ static char	**ft_free(char **ptr)
 	}
 	free(ptr);
 	return (NULL);
-}
-
-static size_t	ft_word_count(char const *s, char c)
-{
-	size_t	count;
-	size_t	i;
-
-	count = 0;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] != c)
-		{
-			count++;
-			while ((s[i] != c) && s[i])
-				i++;
-		}
-		else
-			i++;
-	}
-	return (count);
 }
 
 static char	**ft_seperator(char **ptr, char const *s, char c, size_t count)
@@ -79,10 +58,23 @@ char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
 	size_t	word_count;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
-	word_count = ft_word_count(s, c);
+	i = 0;
+	word_count = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			word_count++;
+			while ((s[i] != c) && s[i])
+				i++;
+		}
+		else
+			i++;
+	}
 	ptr = (char **)malloc(sizeof(char *) * word_count + 1);
 	if (!ptr)
 		return (NULL);
