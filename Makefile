@@ -6,7 +6,7 @@
 #    By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 15:47:36 by jabae             #+#    #+#              #
-#    Updated: 2021/12/13 18:20:57 by jabae            ###   ########.fr        #
+#    Updated: 2021/12/13 19:30:52 by jabae            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ SRCS		=	ft_memset.c		\
 				ft_itoa.c		\
 				ft_strmapi.c	\
 				ft_striteri.c	\
-#				ft_putchar_fd.c	\
+				ft_putchar_fd.c	\
 				ft_putstr_fd.c	\
 				ft_putendl_fd.c	\
 				ft_putnbr_fd.c
