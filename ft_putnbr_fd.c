@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:51:49 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/13 20:14:16 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/14 11:19:29 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,21 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*strnum;
-	
+	char	strnum;
+
 	if (fd < 0)
 		return ;
-	strnum = ft_itoa(n);
-	write(fd, strnum, ft_strlen(strnum));
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	strnum = n % 10 + 48;
+	write(fd, &strnum, 1);
 }

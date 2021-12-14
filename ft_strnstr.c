@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:15:07 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/08 17:01:14 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/14 11:18:14 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	const char	*find_ptr;
-	size_t			i;
-	size_t			j;
+	size_t		i;
+	size_t		j;
 
 	find_ptr = needle;
 	i = 0;

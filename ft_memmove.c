@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 19:33:55 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/08 17:22:29 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/14 11:17:04 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char		*dst_tmp;
 	const unsigned char	*src_tmp;
-	size_t			i;
+	size_t				i;
 
-	dst_tmp = (unsigned char *)dst;
-	src_tmp = (unsigned char *)src;
 	if (!dst_tmp && !src_tmp)
 		return (dst);
+	dst_tmp = (unsigned char *)dst;
+	src_tmp = (unsigned char *)src;
 	if (dst_tmp > src_tmp)
 	{
 		i = len;
@@ -30,15 +30,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			dst_tmp[i - 1] = src_tmp[i - 1];
 			i--;
 		}
+		return (dst);
 	}
-	else
+	i = 0;
+	while (i < len)
 	{
-		i = 0;
-		while (i < len)
-		{
-			dst_tmp[i] = src_tmp[i];
-			i++;
-		}
+		dst_tmp[i] = src_tmp[i];
+		i++;
 	}
 	return (dst);
 }

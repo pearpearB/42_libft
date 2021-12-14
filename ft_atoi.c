@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 13:44:24 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/13 11:22:21 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/14 11:10:04 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ int	ft_atoi(const char *str)
 		return (-1);
 	else if (result > max + 1 && sign == -1)
 		return (0);
-	else
-		return (result * sign);
+	return (result * sign);
 }
