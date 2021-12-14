@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 19:33:55 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/14 11:17:04 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/14 11:24:24 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const unsigned char	*src_tmp;
 	size_t				i;
 
-	if (!dst_tmp && !src_tmp)
+	if (!dst && !src)
 		return (dst);
 	dst_tmp = (unsigned char *)dst;
 	src_tmp = (unsigned char *)src;

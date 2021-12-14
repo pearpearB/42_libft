@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 12:57:17 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/14 11:00:23 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/14 11:25:11 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,34 +29,29 @@ static size_t	ft_n_len(int n)
 	return (count);
 }
 
-static int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	else
-		return (n);
-}
-
 char	*ft_itoa(int n)
 {
-	char	*str;
-	size_t	n_len;
+	char		*str;
+	size_t		n_len;
+	long long	num;
 
 	n_len = ft_n_len(n);
 	str = (char *)malloc(sizeof(char) * n_len + 1);
+	num = (long long)n;
 	if (!str)
 		return (NULL);
-	if (n == 0)
+	if (num == 0)
 		str[0] = '0';
-	if (n < 0)
+	if (num < 0)
 	{
 		str[0] = '-';
+		num *= -1;
 	}
 	str[n_len] = '\0';
-	while (n)
+	while (num)
 	{
-		str[n_len - 1] = ft_abs(n % 10) + 48;
-		n /= 10;
+		str[n_len - 1] = num % 10 + 48;
+		num /= 10;
 		n_len--;
 	}
 	return (str);
