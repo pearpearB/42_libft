@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:15:07 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/14 11:18:14 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/17 17:54:25 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t		i;
 	size_t		j;
 
-	find_ptr = needle;
 	i = 0;
-	if (*needle == '\0')
+	if (!*needle)
 		return ((char *)haystack);
 	while (haystack[i] && i < len)
 	{
 		j = i;
-		while (haystack[j] == *find_ptr && j < len)
+		find_ptr = needle;
+		while (haystack[j] == *find_ptr && j < len && haystack[j] && *find_ptr)
 		{
 			j++;
 			find_ptr++;
-			if (*find_ptr == '\0')
-				return ((char *)haystack + i);
 		}
+		if (*find_ptr == '\0')
+			return ((char *)haystack + i);
 		i++;
 	}
 	return (NULL);

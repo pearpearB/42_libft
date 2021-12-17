@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:41:44 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/13 19:25:06 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/17 17:10:54 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static char	**ft_free(char **ptr)
 		i++;
 	}
 	free(ptr);
+	ptr = NULL;
 	return (NULL);
 }
 
@@ -30,27 +31,27 @@ static char	**ft_seperator(char **ptr, char const *s, char c, size_t count)
 {
 	size_t	i;
 	size_t	next;
-	size_t	index;
+	size_t	idx;
 
 	i = 0;
-	index = 0;
-	while (s[i] && index < count)
+	idx = 0;
+	while (s[i] && idx < count)
 	{
 		if (s[i] != c)
 		{
 			next = i + 1;
 			while (s[next] && s[next] != c)
 				next++;
-			ptr[index] = ft_substr(s, i, next - i);
-			if (!ptr[index])
+			ptr[idx] = ft_substr(s, i, next - i);
+			if (!ptr[idx])
 				return (ft_free(ptr));
-			index++;
+			idx++;
 			i = next;
 		}
 		else
 			i++;
 	}
-	ptr[index] = (char *) '\0';
+	ptr[idx] = (char *)'\0';
 	return (ptr);
 }
 
@@ -75,7 +76,7 @@ char	**ft_split(char const *s, char c)
 		else
 			i++;
 	}
-	ptr = (char **)malloc(sizeof(char *) * word_count + 1);
+	ptr = (char **)malloc(sizeof(char *) * (word_count + 1));
 	if (!ptr)
 		return (NULL);
 	ft_seperator(ptr, s, c, word_count);

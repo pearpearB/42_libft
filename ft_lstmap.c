@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 13:38:27 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/14 13:54:39 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/16 21:01:34 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new = ft_lstnew(f(lst->content));
 		if (!new)
 		{
-			ft_lstclear(&head, del);
+			ft_lstclear(&new, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new, new);
+		ft_lstadd_back(&head, new);
 		lst = lst->next;
 	}
 	return (head);
