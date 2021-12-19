@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:59:34 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/14 13:06:08 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/19 21:24:30 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !del)
+	if (!lst)
 		return ;
 	del(lst->content);
 	free(lst);
+	lst = NULL;
 }
