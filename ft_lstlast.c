@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 12:36:18 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/14 12:43:43 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/31 16:48:35 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-		return (lst);
+		return (NULL);
 	while (lst->next)
 	{
 		lst = lst->next;
