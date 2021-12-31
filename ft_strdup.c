@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:30:57 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/13 11:23:50 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/31 18:51:31 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 
 	copy = (char *)malloc(ft_strlen(s1) + 1);
-	i = 0;
 	if (!copy)
 		return (NULL);
+	i = 0;
 	while (s1[i])
 	{
 		copy[i] = s1[i];

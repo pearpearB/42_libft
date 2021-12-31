@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 17:21:09 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/13 19:03:11 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/31 19:54:45 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (!len || ft_strlen(s) <= start)
-	{
-		result = (char *)malloc(sizeof(char) * 1);
-		result[0] = '\0';
-		return (result);
-	}
+		return (ft_strdup(""));
 	if (len > ft_strlen(s + start))
 		len = ft_strlen(s + start);
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
-	ft_strlcpy(result, (char *)s + start, len + 1);
+	ft_strlcpy(result, s + start, len + 1);
 	return (result);
 }

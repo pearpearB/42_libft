@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:25:28 by jabae             #+#    #+#             */
-/*   Updated: 2021/11/23 13:09:34 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/31 18:49:53 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*ptr;
+	const unsigned char	*ptr;
 
-	ptr = (unsigned char *)s;
+	ptr = (const unsigned char *)s;
 	while (*ptr)
 	{
 		if (*ptr == (char)c)

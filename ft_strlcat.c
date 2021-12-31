@@ -6,7 +6,7 @@
 /*   By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 20:34:26 by jabae             #+#    #+#             */
-/*   Updated: 2021/12/08 15:57:52 by jabae            ###   ########.fr       */
+/*   Updated: 2021/12/31 19:03:02 by jabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	i = 0;
 	if (dstsize <= dst_len)
 		return (dstsize + src_len);
+	i = 0;
 	while (dstsize > dst_len + i + 1 && src[i])
 	{
 		dst[dst_len + i] = src[i];
