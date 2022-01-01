@@ -6,19 +6,19 @@
 #    By: jabae <jabae@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 15:47:36 by jabae             #+#    #+#              #
-#    Updated: 2021/12/16 20:56:45 by jabae            ###   ########.fr        #
+#    Updated: 2022/01/01 17:44:32 by jabae            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 
-CC			= gcc
+CC		= gcc
 CFLAGS		= -Wall -Wextra -Werror
 
-AR			= ar
+AR		= ar
 ARFLAGS		= rcs
 
-RM			= rm
+RM		= rm
 RMFLAGS		= -f
 
 INCLUDES	= ./libft.h
@@ -97,9 +97,7 @@ fclean : clean
 	$(RM) $(RMFLAGS) $(NAME)
 
 .PHONY : re
-re:
-	$(MAKE) fclean
-	$(MAKE) all
+re : fclean all
 
 .PHONY : bonus
 bonus :
