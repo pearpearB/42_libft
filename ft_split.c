@@ -51,7 +51,7 @@ static char	**ft_seperator(char **ptr, char const *s, char c, size_t count)
 		else
 			i++;
 	}
-	ptr[idx] = (char *) '\0';
+	ptr[idx] = NULL;
 	return (ptr);
 }
 
