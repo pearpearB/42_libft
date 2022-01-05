@@ -30,7 +30,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			dst_tmp[i - 1] = src_tmp[i - 1];
 			i--;
 		}
-		return ((void *)dst);
+		return (dst);
 	}
 	i = 0;
 	while (i < len)
@@ -38,5 +38,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		dst_tmp[i] = src_tmp[i];
 		i++;
 	}
-	return ((void *)dst);
+	return (dst);
 }
